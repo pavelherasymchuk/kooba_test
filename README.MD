@@ -45,7 +45,7 @@ password: password
 * Each of the sections show a maximum of 6 cards (for further development, it's also possible to add pagination).
 
 * Events without an announced date show a 'Remind Me' button. Also, you can generate an ICS file via click on the button
-  (for further development, it is also possible to implement automatic sending of a ICV file by mail or a request to add it to the calendar.).
+  (for further development, it is also possible to implement automatic sending of a ICS file by mail or a request to add it to the calendar.).
 * Each card linked to a dedicated event detail page (for further development, it is also possible to develop a front-end functionality for every dedicated page).
 * Automatically generated WebP versions of images delivered through ```<picture>``` tag.
 * 'View All Shows' button to go to the full listing page which shows all events.
