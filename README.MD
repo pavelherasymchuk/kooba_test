@@ -8,7 +8,7 @@
 
 ## Setup a .env file in the root of your project and copy data from env.example running following command:
 ````
-cp .env.example .env
+cp env.example .env
 ````
 
 ## You can start application using `docker-compose` command:
