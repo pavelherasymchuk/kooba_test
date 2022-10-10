@@ -1,0 +1,36 @@
+{exp:channel:entries channel="homepage" limit="1"}
+<!-- include "meta-head.html" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {embed="embeds/meta-head"}
+</head>
+
+<body>
+<main class="main-container">
+
+    <!-- include "partial-header.html" -->
+    {embed="embeds/header"}
+
+    <div class="wrapper wrapper--wide whats-on__wrapper tabs">
+        <div class="tabs__panel" data-tab-id="just-announced" >
+            {embed="sections/just-announced"}
+        </div>
+        <div class="tabs__panel" data-tab-id="upcoming">
+            {embed="sections/upcoming"}
+        </div>
+        <div class="tabs__panel" data-tab-id="featured">
+            {embed="sections/featured"}
+        </div>
+    </div>
+    <div class="whats-on__footer">
+        <a href="{site_url}events" target="_blank"
+           class="button">View All Shows</a>
+    </div>
+    </section>
+</main>
+
+{embed="embeds/footer"}
+</body>
+</html>
+{/exp:channel:entries}

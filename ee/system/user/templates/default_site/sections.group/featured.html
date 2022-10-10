@@ -1,0 +1,5 @@
+{exp:channel:entries channel="event" sort="asc" limit="6"}
+    {if event_type == 'featured'}
+        {embed="events/card" entry_id="{entry_id}"}
+    {/if}
+{/exp:channel:entries}

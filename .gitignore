@@ -1,0 +1,5 @@
+.idea/
+*.log
+ee/system/user/config/config.php
+ee/system/user/cache/
+.env

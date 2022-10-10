@@ -1,0 +1,24 @@
+{exp:channel:entries channel='event' limit='1' show_future_entries='yes' require_entry='yes'}
+{if no_results}
+{redirect='404'}
+{/if}
+
+{exp:download_content filename='{url_title}.ics'}
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+UID:{url_title}-{entry_date format='%Y%m%d'}@{site_name:url_slug}
+DTSTART;TZID={start_date format="%D %d %M %Y"}
+DTEND;TZID={end_date format="%D %d %M %Y"}
+SUMMARY:{title}
+X-APPLE-TRAVEL-ADVISORY-BEHAVIOR:AUTOMATIC
+BEGIN:VALARM
+X-WR-ALARMUID:{url_title}-{entry_date format='%Y%m%d'}@{site_name:url_slug}
+TRIGGER:-PT120M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR
+{/exp:download_content}
+
+{/exp:channel:entries}

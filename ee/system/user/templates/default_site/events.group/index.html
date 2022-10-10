@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {embed="embeds/meta-head"}
+</head>
+
+<body>
+<main class="main-container">
+
+    {embed="embeds/events-header"}
+
+        <div class="wrapper wrapper--wide whats-on__wrapper tabs">
+            <div class="tabs__panel" data-tab-id="just-announced">
+                {exp:channel:entries channel="event"}
+                    {embed="events/card" entry_id="{entry_id}"}
+                {/exp:channel:entries}
+            </div>
+        </div>
+    </section>
+</main>
+
+    {embed="embeds/footer"}
+</body>
+</html>

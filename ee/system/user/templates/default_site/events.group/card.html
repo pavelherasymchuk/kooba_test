@@ -1,0 +1,68 @@
+{exp:channel:entries channel="event" entry_id="{embed:entry_id}" limit="1" cache="no"}
+<article class="card-link"
+         style="transition-delay: 450ms;">
+    <div class="card-link__image">
+        <a href="{site_url}event/{url_title}"
+           class="card-link__image-link">
+            {if image}
+            <!-- 400 x 400 -->
+            <picture>
+                <source src="{image:webp resize:width='400' resize:height='400'}" type="image/webp">
+                <img src="{image:resize width='400' height='400'}"
+                     alt="{embed:title}"
+                     class="card-link__image-source">
+            </picture>
+            {/if}
+        </a>
+    </div>
+
+    <div class="card-link__content">
+        <div class="card-link__titles">
+            <h3 class="h4 card-link__heading">
+                <a class="card-link__heading-link"
+                   href="{site_url}event/{url_title}">{title}</a>
+            </h3>
+            <p class="card-link__sub-heading">
+                {if start_date}
+                <time datetime="{start_date}">{start_date format="%D %d %M %Y"}</time>
+                {/if}
+                {if start_date && end_date}-{/if}
+                {if end_date}
+                <time datetime="{end_date}">{end_date format="%D %d %M %Y"}</time>
+                {/if}
+            </p>
+        </div>
+
+        <div class="card-link__info">
+            <ul class="card-link__list">
+
+            </ul>
+            <div class="card-link__ctas">
+                <div class="inline-ctas">
+                    <a href="{site_url}event/{url_title}"
+                       class="inline-ctas__cta text-pink">
+                        <span class="inline-ctas__text">Learn more</span>
+                        <i class="icon-right-arrow inline-ctas__arrow"></i>
+                    </a>
+                    {if start_date or end_date}
+                    <a href="{site_url}/event/{url_title}"
+                       target="_blank"
+                       rel="noreferrer"
+                       class="inline-ctas__cta text-white">
+                        <i class="icon-ticket inline-ctas__icon"></i>
+                        <span class="inline-ctas__text">Buy Now</span>
+                        <i class="icon-right-arrow inline-ctas__arrow"></i>
+                    </a>
+                    {if:else}
+                    <span class="inline-ctas__text">
+              <a href="{url_title_path='events/ics'}">Remind Me</a>
+            </span>
+                    <i class="icon-right-arrow inline-ctas__arrow"></i>
+                    </a>
+                    {/if}
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+{/exp:channel:entries}

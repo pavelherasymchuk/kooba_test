@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  apache:
+    container_name: 'apache_test'
+    image: httpd:latest
+    volumes:
+      - ./ee:/var/www/html
+      - ./docker/config/apache/httpd.conf:/usr/local/apache2/conf/httpd.conf
+    depends_on:
+      - php
+
+  nginx:
+    container_name: 'nginx_test'
+    image: nginx:latest
+    ports:
+      - ${SITE_PORT}:80
+    volumes:
+      - ./ee:/var/www/html
+      - ./docker/logs/nginx:/var/log/nginx
+      - ./docker/config/nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - apache
+
+  php:
+    container_name: 'php_test'
+    build:
+      context: .
+      dockerfile: docker/config/php/dockerfile
+    volumes:
+      - ./ee:/var/www/html
+
+  db:
+    container_name: 'db_test'
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./docker/config/db/init:/docker-entrypoint-initdb.d/:ro
+
+  phpmyadmin:
+    container_name: 'pma_test'
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - ${PMA_PORT}:80
+    depends_on:
+      - db
+
+volumes:
+  db_data:

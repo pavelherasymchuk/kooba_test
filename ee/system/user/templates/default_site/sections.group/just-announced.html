@@ -1,0 +1,5 @@
+{exp:channel:entries channel="event" orderby={entry_date} limit="6"}
+    {if event_type == 'just-announced'}
+        {embed="events/card" entry_id="{entry_id}"}
+    {/if}
+{/exp:channel:entries}
