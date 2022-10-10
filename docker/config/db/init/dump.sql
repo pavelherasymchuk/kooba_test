@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: db
--- Время создания: Окт 10 2022 г., 07:33
+-- Время создания: Окт 10 2022 г., 09:04
 -- Версия сервера: 8.0.30
 -- Версия PHP: 8.0.19
 
@@ -1054,7 +1054,8 @@ INSERT INTO `exp_cp_log` (`id`, `site_id`, `member_id`, `username`, `ip_address`
 (22, 1, 1, 'admin', '192.168.0.6', 1665381650, 'Logged in'),
 (23, 1, 1, 'admin', '192.168.0.6', 1665382259, 'Logged out'),
 (24, 1, 1, 'admin', '192.168.0.6', 1665382277, 'Logged in'),
-(25, 1, 1, 'admin', '192.168.0.6', 1665385718, 'Logged out');
+(25, 1, 1, 'admin', '192.168.0.6', 1665385718, 'Logged out'),
+(26, 1, 1, 'admin', '192.168.0.6', 1665387339, 'Logged in');
 
 -- --------------------------------------------------------
 
@@ -1755,7 +1756,7 @@ CREATE TABLE `exp_members` (
 --
 
 INSERT INTO `exp_members` (`member_id`, `role_id`, `pending_role_id`, `username`, `screen_name`, `password`, `salt`, `unique_id`, `crypt_key`, `backup_mfa_code`, `authcode`, `email`, `signature`, `avatar_filename`, `avatar_width`, `avatar_height`, `photo_filename`, `photo_width`, `photo_height`, `sig_img_filename`, `sig_img_width`, `sig_img_height`, `ignore_list`, `private_messages`, `accept_messages`, `last_view_bulletins`, `last_bulletin_date`, `ip_address`, `join_date`, `last_visit`, `last_activity`, `total_entries`, `total_comments`, `total_forum_topics`, `total_forum_posts`, `last_entry_date`, `last_comment_date`, `last_forum_post_date`, `last_email_date`, `in_authorlist`, `accept_admin_email`, `accept_user_email`, `notify_by_default`, `notify_of_pm`, `display_signatures`, `parse_smileys`, `smart_notifications`, `language`, `timezone`, `time_format`, `date_format`, `include_seconds`, `profile_theme`, `forum_theme`, `tracker`, `template_size`, `notepad`, `notepad_size`, `bookmarklets`, `quick_links`, `quick_tabs`, `show_sidebar`, `pmember_id`, `cp_homepage`, `cp_homepage_channel`, `cp_homepage_custom`, `dismissed_banner`, `enable_mfa`) VALUES
-(1, 1, 0, 'admin', 'admin', '$2y$10$.Zdtur8yyWxvp2sdAzCez.HKF4g68lVNRt3CpxMZy.RF8VMhFobP2', '', '5c1fceccf41c9795358b64deadf2384e5ed24f1f', 'c365942f3202541a6601350bd5b871d6b90d6e54', NULL, NULL, 'test@admin.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 'y', 0, 0, '172.31.0.1', 1665070903, 1665353115, 1665385460, 8, 0, 0, 0, 1665338280, 0, 0, 0, 'n', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'english', 'UTC', NULL, NULL, NULL, NULL, NULL, NULL, '28', NULL, '18', NULL, 'Pages|admin.php?/cp/addons/settings/structure|1', NULL, 'n', 0, NULL, NULL, NULL, 'y', 'n');
+(1, 1, 0, 'admin', 'admin', '$2y$10$.Zdtur8yyWxvp2sdAzCez.HKF4g68lVNRt3CpxMZy.RF8VMhFobP2', '', '5c1fceccf41c9795358b64deadf2384e5ed24f1f', 'c365942f3202541a6601350bd5b871d6b90d6e54', NULL, NULL, 'test@admin.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 'y', 0, 0, '172.31.0.1', 1665070903, 1665353115, 1665392262, 8, 0, 0, 0, 1665338280, 0, 0, 0, 'n', 'y', 'y', 'y', 'y', 'y', 'y', 'y', 'english', 'UTC', NULL, NULL, NULL, NULL, NULL, NULL, '28', NULL, '18', NULL, 'Pages|admin.php?/cp/addons/settings/structure|1', NULL, 'n', 0, NULL, NULL, NULL, 'y', 'n');
 
 -- --------------------------------------------------------
 
@@ -2514,7 +2515,7 @@ CREATE TABLE `exp_security_hashes` (
 --
 
 INSERT INTO `exp_security_hashes` (`hash_id`, `date`, `session_id`, `hash`) VALUES
-(19, 1665381418, 'f93842dc5723ca706368b6352c5169edf5dbce9a', '5014fa4d290377dd1c80386a60e1cd205583d446');
+(23, 1665387340, '2c3e48aebbd70fafd5d82f3f9abd274b83fc4f53', '92ac47a6d0958b25fffdb669bf90d63595e35263');
 
 -- --------------------------------------------------------
 
@@ -2543,7 +2544,7 @@ CREATE TABLE `exp_sessions` (
 --
 
 INSERT INTO `exp_sessions` (`session_id`, `member_id`, `admin_sess`, `ip_address`, `user_agent`, `login_state`, `fingerprint`, `sess_start`, `auth_timeout`, `last_activity`, `can_debug`, `mfa_flag`, `pro_banner_seen`) VALUES
-('f93842dc5723ca706368b6352c5169edf5dbce9a', 1, 1, '192.168.0.6', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36', NULL, 'eb26d6baa7e45a264e16771a3eaf8483', 1665381418, 0, 1665381650, '0', 'skip', 'n');
+('2c3e48aebbd70fafd5d82f3f9abd274b83fc4f53', 1, 1, '192.168.16.6', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36', NULL, 'eb26d6baa7e45a264e16771a3eaf8483', 1665391910, 0, 1665392262, '0', 'skip', 'n');
 
 -- --------------------------------------------------------
 
@@ -4220,7 +4221,7 @@ ALTER TABLE `exp_cookie_settings`
 -- AUTO_INCREMENT для таблицы `exp_cp_log`
 --
 ALTER TABLE `exp_cp_log`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT для таблицы `exp_dashboard_layouts`
@@ -4508,7 +4509,7 @@ ALTER TABLE `exp_search_log`
 -- AUTO_INCREMENT для таблицы `exp_security_hashes`
 --
 ALTER TABLE `exp_security_hashes`
-  MODIFY `hash_id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `hash_id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT для таблицы `exp_sites`
